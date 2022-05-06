@@ -5,6 +5,7 @@ const fs = require("fs");
 const util = require("util");
 
 const noteJSON = require("../db/db.json");
+const { request } = require("http");
 
 //GET route for retrieving notes
 noteReturn.get("/notes", (req, res) => {
@@ -26,7 +27,7 @@ noteReturn.post("/notes", (req, res) => {
     const newNote = {
       title,
       text,
-      note_id: uid(),
+      id: uid(),
     };
 
     fs.readFile("./db/db.json", "utf8", (err, data) => {
@@ -43,16 +44,32 @@ noteReturn.post("/notes", (req, res) => {
         res.status(201).json(noteJSON);
       }
     });
-
-    // const newList = {
-    //   status: "Success",
-    //   body: parsedNotes,
-    // };
-
-    //res.status(201).json(noteJSON);
   } else {
     res.status(500).json("Error in saving note!");
   }
+});
+
+// DELETE method for deleting notes
+noteReturn.delete("/notes/:id", (req, res) => {
+  const requestedNote = req.params.id;
+
+  fs.readFile("./db/db.json", "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedNotes = JSON.parse(data);
+      const remNotes = parsedNotes.filter(checkId);
+
+      function checkId(notes) {
+        return notes.id != requestedNote;
+      }
+
+      fs.writeFile("./db/db.json", JSON.stringify(remNotes), (err) =>
+        err ? console.error(err) : console.info("Removed!")
+      );
+      res.status(201).json(noteJSON);
+    }
+  });
 });
 
 module.exports = noteReturn;
