@@ -1,1 +1,12 @@
-[{"title":"Test Title","text":"Test text"},{"title":"Baby Cole","text":"Nat's drummer Boy","id":"kRSYJ"},{"title":"New Note!","text":"This is a new note I'm writing for my webpage!","id":"yHmJK"}]
+[
+  {
+    "title": "Delete Me!",
+    "text": "Simply click on the Red Trashcan to delete this note!",
+    "id": "ZroWD"
+  },
+  {
+    "title": "Add Note!",
+    "text": "Click on the Floppy Disc to save this note!",
+    "id": "3bwuY"
+  }
+]

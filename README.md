@@ -1,5 +1,7 @@
 # Note Taker App
 
+![A visual of the Note-taking application; saved notes are on the left side, while a blank memo promt is on the right.](/Assets/Note_Taker_screenshot.png)
+
 ## Description
 
 Why did you decide to build this project?
@@ -92,6 +94,8 @@ If you have any questions, you can contact me through:
 
 # Dev Log
 
+![A visual of some of the code utilized in the program.](/Assets/Note_Taker_Code_%20Screenshot.png)
+
 ## Day One
 
 - Set up assets for public use, as well as downloaded dependencies needed to run program; express.js, and short-unique-id.js (both npm packages!)
@@ -112,3 +116,9 @@ If you have any questions, you can contact me through:
 - Typed out this README file!
 - Got a DELETE method set up! (Now we have all three; GET, POST, and DELETE!)
 - Ran some rough tests with requests!
+
+## Day Five
+
+- Uploaded to Heroku!
+
+---

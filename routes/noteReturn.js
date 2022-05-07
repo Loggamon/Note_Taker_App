@@ -13,8 +13,6 @@ noteReturn.get("/notes", (req, res) => {
 
   readFilePromise("./db/db.json").then((data) => res.json(JSON.parse(data)));
   console.info(`${req.method} recieved... Pulling notes now!`);
-
-  //res.status(200).json(noteJSON);
 });
 
 // POST method for adding to notes
